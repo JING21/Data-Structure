@@ -6,6 +6,5 @@
 
 - Data-Structure
   - Array
-    - [顺序查找]（https://github.com/JING21/Data-Structure/blob/master/Array/SequentialSearch/SequentialSearch.go）
-    - [二分法查找]（https://github.com/JING21/Data-Structure/blob/master/Array/BinarySearch/BinarySearch.go）
-
+    - [顺序查找](https://github.com/JING21/Data-Structure/tree/master/Array/BinarySearch)
+    - [二分法查找](https://github.com/JING21/Data-Structure/tree/master/Array/SequentialSearch)
