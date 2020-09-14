@@ -80,4 +80,5 @@ func main() {
 	stack.Pop()
 	// 显示
 	stack.List()
+
 }
