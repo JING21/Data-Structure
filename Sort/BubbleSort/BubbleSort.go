@@ -1,3 +1,7 @@
+/*
+bubblesort的时间复杂度为O(N²),比较次数为N²-1，第一趟比较为n-1,第二趟为n-2，累加为（(n-1)+1）*（n-1）/2
+ */
+
 package main
 
 import "fmt"
