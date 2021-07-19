@@ -9,7 +9,7 @@ type Node struct {
 
 type LinkList struct {
 	headNode *Node  //头结点
-}
+}:
 
 func ReverserList(head *Node) *Node {
 	    if head.Next == nil{
