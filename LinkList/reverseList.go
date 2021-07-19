@@ -6,8 +6,20 @@ func ReverserList(head *Node) *Node {
 		}
 		LastNode := ReverserList(head.Next)
 		head.Next.Next = head
-		head.Next =nil
+		head.Next = nil
 		return LastNode
 }
 
+var successor *Node
 
+func ReverseNList(head *Node, n int) *Node {
+	if (n == 1) {
+		finalNode := head.Next
+		return finalNode
+	}
+	lastNode := ReverseNList(head.Next, n-1)
+
+	head.Next.Next = head
+	head.Next = successor
+	return lastNode
+}
