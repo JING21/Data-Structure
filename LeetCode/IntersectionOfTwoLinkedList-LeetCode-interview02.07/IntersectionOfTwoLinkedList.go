@@ -50,6 +50,3 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 
 
 
-func getIntersectionNode2(headA, headB *ListNode) *ListNode {
-	bool resultA := CheckLinkListRing_LeetCode141.CheckRing()
-}
