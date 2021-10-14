@@ -1,0 +1,1 @@
+package offer58_1_reverseSentecesWord
