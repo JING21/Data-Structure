@@ -1,20 +1,40 @@
 package QuickSort
 
-func quickSort(a []int){
-	n := len(a)
-	
-	if n < 2{
+
+
+func QuickSort(arr []int){
+	seperateSort(arr,0 , len(arr)-1)
+}
+
+func seperateSort(arr []int, start, end int){
+	if start >= end{
 		return
 	}
-	
-	for i := 1; i < n; i++{
-		for j := i; j > 0 && a[j] < a[j-1]; j-- {
-			swap(a, j, j-1)
+
+	i := partition(arr, start, end)
+	seperateSort(arr, start, i-1)
+	seperateSort(arr, i+1, end)
+
+}
+
+
+func partition(arr []int, start, end int) int{
+
+	pivot := arr[end]
+
+	var i = start
+	for j := start; j < end; j++{
+		if arr[j] < pivot{
+			if !(i == j){
+				arr[i], arr[j] = arr[j], arr[i]
+			}
+			i++
 		}
 	}
+	arr[i], arr[end] = arr[end], arr[i]
+
+	return  i
 }
 
 
-func swap(slice []int, i,j int){
-	slice[i], slice[j] = slice[j], slice[i]
-}
+
