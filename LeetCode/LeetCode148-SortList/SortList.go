@@ -1,18 +1,34 @@
-package MergeTwoSortedList_LeetCode21
-
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+package LeetCode148_SortList
 
 type ListNode struct {
-	     Val int
-	    Next *ListNode
+	Val int
+	Next *ListNode
 }
 
+func sortList(head *ListNode) *ListNode {
+	return sort(head, nil)
+}
+
+func sort(head, tail *ListNode) *ListNode{
+	if head == nil{
+		return head
+	}
+	if head.Next == tail{
+		head.Next = nil
+		return head
+	}
+	slow, fast := head, head
+	for fast != tail{
+		slow = slow.Next
+		fast = fast.Next
+		if fast != tail{
+			fast = fast.Next
+		}
+	}
+	mid := slow
+
+	return mergeTwoLists(sort(head, mid),sort(mid,tail))
+}
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	//如果l1是nil,直接返回l2，因为链表本身是有序的

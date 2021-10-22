@@ -1,4 +1,4 @@
-package MergeKLinkList_LeetCode25
+package LeetCode25_MergeKLinkList
 
 type ListNode struct {
 	Val int

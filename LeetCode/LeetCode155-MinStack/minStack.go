@@ -1,4 +1,4 @@
-package MinStack_LeetCode155
+package LeetCode155_MinStack
 
 import "math"
 

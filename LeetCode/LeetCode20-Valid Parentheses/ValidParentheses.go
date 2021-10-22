@@ -35,7 +35,7 @@ Constraints:
 s consists of parentheses only '()[]{}'.
  */
 
-package Valid_Parentheses_LeetCode20
+package LeetCode20_Valid_Parentheses
 
 type Stack []interface {}
 

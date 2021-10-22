@@ -1,4 +1,4 @@
-package CheckLinkListRing_LeetCode141
+package LeetCode141_CheckLinkListRing
 
 type Object interface {}
 

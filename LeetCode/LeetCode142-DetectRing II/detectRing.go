@@ -1,4 +1,4 @@
-package DetectRing_II_LeetCode142
+package LeetCode142_DetectRing_II
 
 //Definition for singly-linked list.
 type ListNode struct {

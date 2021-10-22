@@ -1,4 +1,4 @@
-package IntersectionOfTwoLinkedList_LeetCode_interview02_07
+package LeetCode_interview02_07_IntersectionOfTwoLinkedList
 
 
 //不存在环的情况

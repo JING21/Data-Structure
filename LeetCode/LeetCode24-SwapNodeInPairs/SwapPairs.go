@@ -1,4 +1,4 @@
-package SwapNodeInPairs_LeetCode24
+package LeetCode24_SwapNodeInPairs
 
 
 type ListNode struct {
