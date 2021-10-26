@@ -7,3 +7,5 @@
 冒泡排序| O(1) | 是 | 是 | O(n) | O(n²) | O(n²)
 插入排序| O(1) | 是 | 是 | O(n) | O(n²) | O(n²)
 选择排序| O(1) | 是 | 否 | O(n²) | O(n²) | O(n²)
+归并排序| O(n) | 否 | 是 | O(nlogn) | O(nlogn) | O(nlogn)
+快速排序| O(1) | 是 | 否 | O(nlogn) | O(n²) | O(nlogn)
