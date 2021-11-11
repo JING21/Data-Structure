@@ -1,6 +1,9 @@
 package offer40_getKmin
 
-import "sort"
+import (
+	"container/heap"
+	"sort"
+)
 
 func getLeastNumbers(arr []int, k int) []int {
 	sort.Ints(arr)
@@ -9,4 +12,7 @@ func getLeastNumbers(arr []int, k int) []int {
 
 
 
+func getLeastNumbers2(arr []int, k int) []int {
+	heap.Init(arr)
+}
 
