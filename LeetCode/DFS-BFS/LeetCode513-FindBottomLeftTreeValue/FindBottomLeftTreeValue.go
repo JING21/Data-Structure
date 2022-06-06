@@ -7,31 +7,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func levelOrder2(root *TreeNode) [][]int {
-	result := [][]int{}
-	if root == nil {
-		return result
-	}
-	currentLevel := []*TreeNode{root}
-
-	for i := 0; len(currentLevel) > 0; i++ {
-		result = append(result, []int{})
-		nextLevel := []*TreeNode{}
-		for j := 0; j < len(currentLevel); j++ {
-			node := currentLevel[j]
-			result[i] = append(result[i], node.Val)
-			if node.Left != nil {
-				nextLevel = append(nextLevel, node.Left)
-			}
-			if node.Right != nil {
-				nextLevel = append(nextLevel, node.Right)
-			}
-		}
-		currentLevel = nextLevel
-	}
-	return result
-}
-
 func findBottomLeftValue(root *TreeNode) int {
 	result := [][]int{}
 
@@ -59,26 +34,28 @@ func findBottomLeftValue(root *TreeNode) int {
 	}
 	return result[len(result)-1][0]
 }
-func findBottomLeftValue(root *TreeNode) int {
-	if root == nil {
+
+var max, result int
+
+func findBottomLeftValue2(root *TreeNode) int {
+	if root.Left == nil && root.Right == nil {
 		return root.Val
 	}
 
-	var res []int
-	queue := []*TreeNode{root}
-	for len(queue) > 0 {
-		n := len(queue)
-		res = append(res, queue[0].Val)
-		for i := 0; i < n; i++ {
-			node := queue[0]
-			queue = queue[1:]
-			if node.Left != nil {
-				queue = append(queue, node.Left)
-			}
-			if node.Right != nil {
-				queue = append(queue, node.Right)
-			}
+	DFS(root, max)
+	return result
+}
+func DFS(root *TreeNode, depth int) {
+	if root.Left == nil && root.Right == nil {
+		if depth > max {
+			result = root.Val
+			max = depth
 		}
 	}
-	return res[len(res)-1]
+	if root.Left != nil {
+		DFS(root.Left, depth+1)
+	}
+	if root.Right != nil {
+		DFS(root.Right, depth+1)
+	}
 }
