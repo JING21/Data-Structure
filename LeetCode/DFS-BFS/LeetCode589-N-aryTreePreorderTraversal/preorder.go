@@ -6,33 +6,24 @@ type Node struct {
 	Children []*Node
 }
 
-//func preorder(root *Node) []int {
-//	result := []int{}
-//	if root == nil {
-//		return result
-//	}
-//
-//	var dfs func(node *Node)
-//	dfs = func(node *Node) {
-//		if node == nil {
-//			return
-//		}
-//		children
-//		result = append(result)
-//	}
-//}
+func preorder(root *Node) []int {
+	result := []int{}
+	if root == nil {
+		return result
+	}
 
-func preorder(root *Node) (ans []int) {
-	var dfs func(*Node)
+	var dfs func(node *Node)
 	dfs = func(node *Node) {
 		if node == nil {
 			return
 		}
-		ans = append(ans, node.Val)
-		for _, ch := range node.Children {
-			dfs(ch)
+		result = append(result, node.Val)
+		for _, children := range node.Children {
+			dfs(children)
 		}
 	}
 	dfs(root)
-	return
+
+	return result
 }
+
