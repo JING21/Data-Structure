@@ -50,3 +50,19 @@ func flatten(root *TreeNode) {
 		pre.Left, pre.Right = nil, curr
 	}
 }
+
+func flattenMorris(root *TreeNode) {
+	curr := root
+	for curr != nil {
+		if curr.Left != nil {
+			next := curr.Left
+			pre := next
+			for pre.Right != nil {
+				pre = pre.Right
+			}
+			pre.Right = curr.Right
+			curr.Left, curr.Right = nil, next
+		}
+		curr = curr.Right
+	}
+}
