@@ -1,4 +1,4 @@
-package LeetCode270__RemoveElement
+package LeetCode27_RemoveElement
 
 func removeElement(nums []int, val int) int {
 	len := len(nums)
