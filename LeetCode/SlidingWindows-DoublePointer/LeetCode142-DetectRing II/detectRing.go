@@ -2,15 +2,15 @@ package LeetCode142_DetectRing_II
 
 //Definition for singly-linked list.
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 
 func detectCycle(head *ListNode) *ListNode {
 	slow, fast := head, head
-	for fast !=nil {
-		slow =slow.Next
-		if fast.Next == nil{
+	for fast != nil {
+		slow = slow.Next
+		if fast.Next == nil {
 			return nil
 		}
 		fast = fast.Next.Next
