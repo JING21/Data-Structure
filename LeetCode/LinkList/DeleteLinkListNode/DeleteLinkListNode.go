@@ -1,14 +1,8 @@
-package main
-
-func main() {
-
-}
-
-
+package DeleteLinkListNode
 
 //Definition for singly-linked list.
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 
