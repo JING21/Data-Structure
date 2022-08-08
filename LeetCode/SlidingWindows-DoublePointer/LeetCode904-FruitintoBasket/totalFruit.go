@@ -1,4 +1,4 @@
-package LeetCode_904_FruitintoBasket
+package LeetCode904_FruitintoBasket
 
 func totalFruit(fruits []int) int {
 	left, maxLen, n := 0, 0, len(fruits)
