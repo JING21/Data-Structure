@@ -5,7 +5,7 @@ An input string is valid if:
 
 Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
- 
+
 
 Example 1:
 
@@ -27,27 +27,27 @@ Example 5:
 
 Input: s = "{[]}"
 Output: true
- 
+
 
 Constraints:
 
 1 <= s.length <= 104
 s consists of parentheses only '()[]{}'.
- */
+*/
 
-package LeetCode20_Valid_Parentheses
+package LeetCode20_ValidParentheses
 
-type Stack []interface {}
+type Stack []interface{}
 
-func (s *Stack) IsEmpty() bool{
-	if s.Length() == 0{
+func (s *Stack) IsEmpty() bool {
+	if s.Length() == 0 {
 		return true
-	}else {
+	} else {
 		return false
 	}
 }
 
-func (s Stack) Length() int{
+func (s Stack) Length() int {
 	return len(s)
 }
 
@@ -55,23 +55,22 @@ func (s *Stack) Cap() int {
 	return s.Cap()
 }
 
-
 func (s *Stack) Push(value interface{}) {
 	*s = append(*s, value)
 
 }
 
-func (s Stack) Top() interface{}{
-	if s.Length() == 0{
+func (s Stack) Top() interface{} {
+	if s.Length() == 0 {
 		return nil
 	}
 	topIndex := s.Length()
 	return s[topIndex-1]
 }
 
-func (s *Stack) Pop() interface{}{
+func (s *Stack) Pop() interface{} {
 	newStack := *s
-	if s.Length() == 0{
+	if s.Length() == 0 {
 		return nil
 	}
 	value := newStack[newStack.Length()-1]
@@ -79,21 +78,20 @@ func (s *Stack) Pop() interface{}{
 	return value
 }
 
-
 func isValid(s string) bool {
 	newStack := Stack{}
-	Hash := map[byte]byte{'}':'{',  ')':'(', ']':'['}
-	if len(s) % 2 ==1 {
+	Hash := map[byte]byte{'}': '{', ')': '(', ']': '['}
+	if len(s)%2 == 1 {
 		return false
 	}
-	for i := 0; i<len(s); i++ {
+	for i := 0; i < len(s); i++ {
 		top := newStack.Top()
 		value, _ := top.(byte)
-		if s[i] == '{' || s[i] == '[' || s[i] == '('{
+		if s[i] == '{' || s[i] == '[' || s[i] == '(' {
 			newStack.Push(s[i])
-		}else if value == Hash[s[i]] {
+		} else if value == Hash[s[i]] {
 			newStack.Pop()
-		}else{
+		} else {
 			return false
 		}
 	}
@@ -103,6 +101,3 @@ func isValid(s string) bool {
 	}
 	return false
 }
-
-
-
