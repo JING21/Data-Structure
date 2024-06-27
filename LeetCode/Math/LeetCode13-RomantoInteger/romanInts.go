@@ -1,41 +1,36 @@
 package LeetCode13_RomantoInteger
 
 func romanToInt(s string) int {
-
-	var getValue func(s string) int
-	{
+	getValue := func(s byte) int {
 		switch s {
-		case "I":
+		case 'I':
 			return 1
-		case "V":
+		case 'V':
 			return 5
-		case "X":
+		case 'X':
 			return 10
-		case "L":
+		case 'L':
 			return 50
-		case "C":
+		case 'C':
 			return 100
-		case "D":
+		case 'D':
 			return 500
-		case "M":
+		case 'M':
 			return 1000
+		default:
+			return 0
 		}
 	}
 
 	sum := 0
-	preNum := getValue(string(s[0]))
 
-	for i := 1; i < len(s); i++ {
-		num := getValue(string(s[i]))
-		if preNum < num {
-			sum -= preNum
+	for i := range s {
+		num := getValue(s[i])
+		if i < len(s)-1 && num < getValue(s[i+1]) {
+			sum -= num
 		} else {
-			sum += preNum
+			sum += num
 		}
-		preNum = sum
 	}
-
-	sum += preNum
-
 	return sum
 }

@@ -55,6 +55,7 @@ func canFinish2(numCourses int, prerequisites [][]int) bool {
 		edges[info[1]] = append(edges[info[1]], info[0])
 		indeg[info[0]]++
 	}
+	//初始化队列
 	q := []int{}
 	for i, v := range indeg {
 		if v == 0 {
