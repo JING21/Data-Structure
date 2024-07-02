@@ -70,6 +70,7 @@ func maxProfit2(k int, prices []int) int {
 
 	for i := 1; i < len(prices); i++ {
 		for j := 0; j < 2*k; j += 2 {
+			//j为奇数是是买，为偶数时为卖
 			dp[i][j+1] = max(dp[i-1][j+1], dp[i-1][j]-prices[i])
 			dp[i][j+2] = max(dp[i-1][j+2], dp[i-1][j+1]+prices[i])
 		}
