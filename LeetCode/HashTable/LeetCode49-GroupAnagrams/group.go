@@ -1,6 +1,8 @@
 package LeetCode49_GroupAnagrams
 
-import "sort"
+import (
+	"sort"
+)
 
 func groupAnagrams(strs []string) [][]string {
 	mp := map[string][]string{}
