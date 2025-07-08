@@ -31,7 +31,6 @@ func pack(kind, bagweight int, weight, value []int) int {
 			}
 		}
 	}
-
 	return dp[kind-1][bagweight]
 }
 

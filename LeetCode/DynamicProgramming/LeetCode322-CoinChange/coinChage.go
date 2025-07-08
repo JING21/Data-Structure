@@ -10,7 +10,7 @@ import (
 import "math"
 
 func coinChange(coins []int, amount int) int {
-	//dp表示从0-i取对应的硬币所组成的和为j的，硬币个数
+	//dp表示从0-i取对应的硬币所组成的和为j的，硬币个数,而此时需要物品0，表示不取任何一个硬币的情况，所以需要len(coins)+1
 	dp := make([][]int, len(coins)+1)
 
 	for i := range dp {

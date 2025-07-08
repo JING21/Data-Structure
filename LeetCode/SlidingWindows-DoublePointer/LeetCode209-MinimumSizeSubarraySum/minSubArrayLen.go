@@ -1,6 +1,8 @@
 package LeetCode209_MinimumSizeSubarraySum
 
-import "math"
+import (
+	"math"
+)
 
 func minSubArrayLen(s int, nums []int) int {
 	n := len(nums)
@@ -8,7 +10,6 @@ func minSubArrayLen(s int, nums []int) int {
 	if n == 0 {
 		return 0
 	}
-
 	minSize := math.MaxInt64
 	start, end := 0, 0
 	sum := 0
